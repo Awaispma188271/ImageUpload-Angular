@@ -1,0 +1,36 @@
+<div class="container-fluid main">
+  <div class="login">
+    <form [formGroup]="ImageFile" (ngSubmit)="submit()">
+      <h1 class="form_header text-success">Add Image</h1>
+      <div class="mb-3">
+        <label for="Title" class="form-label">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="Title"
+          aria-describedby="emailHelp"
+          formControlName="Title"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="Password" class="form-label">ImagePath</label>
+        <input
+          type="file"
+          class="form-control"
+          id="ImagePath"
+          aria-describedby="emailHelp"
+          formControlName="ImagePath"
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-success form_btn mt-2"
+        [disabled]="!ImageFile.valid"
+      >
+        Submit
+      </button>
+      <!-- <div class="mt-2">Do not have account? <a href="user/register">Create</a></div> -->
+    </form>
+  </div>
+</div>
